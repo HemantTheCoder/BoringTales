@@ -425,15 +425,17 @@ function charSpeech() {
 
   RiTa.sentences = rm.generateSentences(20);
 
-  for (i = 0; i < r.sentences.length; i++) {
-    console.log(r.sentences[i]);
+  for (i = 0; i < RiTa.sentences.length; i++) {
+    console.log(RiTa.sentences[i]);
+    $('div#output').append(RiTa.sentences[i] + " ");
   }
   
-  var speech = "It approached the " + prevChar + ", " + verbedAdverb() + " to it, " + "and said: " + " <br/></br/>'Excuse me, but I was wondering: " + `${rm.generateSentences(20)} ` + "'" + "\n'Actually,' responded the " + prevChar + ` ${RiTa.randomWord('rb')}` + ", 'I think you'll find the following. " +  `${rm.generateSentences(20)} ` + "'" + "<br/><br/>The " + currentChar + " felt " + `${RiTa.randomWord('jj')} ` + "at this, and " + verbedAdverb() + ". ";
+  var speech = "It approached the " + prevChar + ", " + verbedAdverb() + " to it, " + "and said: " + " <br/></br/>'Excuse me, but I was wondering: " + charSpeech() + "'" + "\n'Actually,' responded the " + prevChar + ` ${RiTa.randomWord('rb')}` + ", 'I think you'll find the following. " +  charSpeech() + "'" + "<br/><br/>The " + currentChar + " felt " + `${RiTa.randomWord('jj')} ` + "at this, and " + verbedAdverb() + ". ";
   
-   console.log(speech);
-  $('div#output').append(speech);
 }
+   /* console.log(speech);
+  $('div#output').append(speech);
+} */
   
   
 // WHAT GOES ON THE PAGE

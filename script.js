@@ -413,6 +413,7 @@ function charAction() {
 }
 
 var saySentences = []  
+var respondSentences = []  
   
 function charSpeech() {
   var prevChar = characters[characters.length - 1];
@@ -432,8 +433,14 @@ function charSpeech() {
     console.log(saySentences);
  }
   
-  var speech = "It approached the " + prevChar + ", " + verbedAdverb() + " to it, " + "and said: " + " <br/></br/>'Excuse me, but I was wondering: " + saySentences.join(" ") + "'" + "'Actually,' responded the " + prevChar + ` ${RiTa.randomWord('rb')}` + ", 'I think you'll find the following. " +  "placeholder" + "'" + "<br/><br/>The " + currentChar + " felt " + `${RiTa.randomWord('jj')} ` + "at this, and " + verbedAdverb() + ". ";
+  RiTa.response = rm.generateSentences(20);
+
+  for (i = 0; i < RiTa.response.length; i++) {
+    respondSentences.push(RiTa.response[i]);
+    console.log(respondSentences);
+ }
   
+  var speech = "It approached the " + prevChar + ", " + verbedAdverb() + " to it, " + "and said: " + " <br/></br/>'Excuse me, but I was wondering: " + saySentences.join(" ") + "'" + "<br/><br/>'Actually,' responded the " + prevChar + ` ${RiTa.randomWord('rb')}` + ", 'I think you'll find the following. " + respondSentences.join(" ") + "' " + "The " + currentChar + " felt " + `${RiTa.randomWord('jj')} ` + "at this, and " + verbedAdverb() + ". ";
   
   console.log(speech);
   $('div#output').append(speech);

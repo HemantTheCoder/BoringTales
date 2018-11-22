@@ -411,16 +411,13 @@ function charAction() {
   console.log(action);
   $('div#output').append(action);
 }
-
-var saySentences = []  
-var respondSentences = []  
   
 function charSpeech() {
   var prevChar = characters[characters.length - 1];
   var currentChar = characters[0];
   var nextChar = characters[1];
-  
-  `${RiTa.pluralize(RiTa.randomWord('nn'))}` 
+  var saySentences = []  
+  var respondSentences = []  
   
   var rm = new RiMarkov(3);
   
@@ -430,14 +427,12 @@ function charSpeech() {
 
   for (i = 0; i < RiTa.sentences.length; i++) {
     saySentences.push(RiTa.sentences[i]);
-    console.log(saySentences);
  }
   
   RiTa.response = rm.generateSentences(20);
 
   for (i = 0; i < RiTa.response.length; i++) {
     respondSentences.push(RiTa.response[i]);
-    console.log(respondSentences);
  }
   
   var speech = "It approached the " + prevChar + ", " + verbedAdverb() + " to it, " + "and said: " + " <br/></br/>'Excuse me, but I was wondering: " + saySentences.join(" ") + "'" + "<br/><br/>'Actually,' responded the " + prevChar + ` ${RiTa.randomWord('rb')}` + ", 'I think you'll find the following. " + respondSentences.join(" ") + "' " + "The " + currentChar + " felt " + `${RiTa.randomWord('jj')} ` + "at this, and " + verbedAdverb() + ". ";
@@ -451,8 +446,6 @@ function charSpeech() {
 // exposition 
   
 exposition()
-  
-// description of each of the sentient characters 
   
 var i;
 for (i = 0; i < characters.length; i++) { 

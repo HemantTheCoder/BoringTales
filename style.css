@@ -1,14 +1,20 @@
 /* CSS files add styling rules to your content */
 
 body {
-  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-family: "Baskerville", "Georgia", helvetica, arial, sans-serif;
   margin: 2em;
+  
 }
 
 h1 {
   font-style: italic;
   color: #373fff;
 }
+
+#trace {
+  float: left;
+font-size: 2em;
+margin: 0.5em;}
 
 #output {
   max-width: 800px;

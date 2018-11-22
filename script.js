@@ -1,6 +1,28 @@
-document.write("starting");
+$(document).ready(function() {
   
+document.write("starting");
+                  
 // generate a forest in tracery
+  function loadGrammar(name) {
+        $("#output").html("");
+
+        var grammar = tracery.createGrammar(grammars[name]);
+        $("#grammar").html(grammar.toText());
+
+        for (var i = 0; i < 8; i++) {
+
+            var s = grammar.flatten("#origin#");
+            console.log(s);
+            var div = $("<div/>", {
+                class : "outputSample",
+                html : s
+            });
+
+            $("#output").append(div);
+
+        }
+
+    };
 
 var foresttemplate = tracery.createGrammar(
    {
@@ -223,10 +245,10 @@ var foresttemplate = tracery.createGrammar(
 });
   
 // output the forest as a single string of characters
-
-  foresttemplate.addModifiers(tracery.baseEngModifiers); 
   
   var forestoutput = foresttemplate.flatten('#origin#');
+  
+  
   
   
 // figure out who the characters present are - maybe there's a more elegant way to do this, but i don't know it.
@@ -326,7 +348,7 @@ var dayNight = [
 ];
   
 var placeDesc = [
-  "Through the " + `${r.randomWord('jj')} ` + "and " + `${r.randomWord('jj')} ` + "trees were scattered",
+  "Through the " + `${rita.randomWord('jj')} ` + "and " + `${r.randomWord('jj')} ` + "trees were scattered",
   "In the " + `${r.randomWord('jj')} ` + "and " + `${r.randomWord('jj')} ` + "clearing sat",
   "Wandering through the " + `${r.randomWord('jj')} ` + "and " + `${r.randomWord('jj')} ` + "grass came"
 ];
@@ -431,5 +453,5 @@ for (i = 0; i < characters.length; i++) {
   // characters.splice(0,1);
  characters.push(characters.shift());  // moves first character to end of array so we can start over
 }
-
-                                      
+  
+});

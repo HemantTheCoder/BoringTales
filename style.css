@@ -9,3 +9,8 @@ h1 {
   font-style: italic;
   color: #373fff;
 }
+
+#output {
+  max-width: 800px;
+  margin: 0 auto;
+}

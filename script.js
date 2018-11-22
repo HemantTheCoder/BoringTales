@@ -1,9 +1,7 @@
 $(document).ready(function() {
   
-document.write("starting");
-                  
 // generate a forest in tracery
-  function loadGrammar(name) {
+ /*  function loadGrammar(name) {
         $("#output").html("");
 
         var grammar = tracery.createGrammar(grammars[name]);
@@ -22,7 +20,7 @@ document.write("starting");
 
         }
 
-    };
+    }; */
 
 var foresttemplate = tracery.createGrammar(
    {
@@ -245,6 +243,7 @@ var foresttemplate = tracery.createGrammar(
 });
   
 // output the forest as a single string of characters
+  var value = $(this).val().replace(/\n/g, '<br/>');
   
   var forestoutput = foresttemplate.flatten('#origin#');
   
@@ -330,7 +329,7 @@ var foresttemplate = tracery.createGrammar(
   }
   
   // log the forest trace and the cast of characters.
-$('div.forest').html(forestoutput);
+$('div#output').html(forestoutput);
 
   console.log(forestoutput);
   console.log(characters);
@@ -339,8 +338,8 @@ $('div.forest').html(forestoutput);
   
   
 // exposition
-var pastTense = {tense: r.PAST_TENSE}; //arg for rita
-var plural = {number: r.PLURAL}; //arg for rita
+var pastTense = {tense: RiTa.PAST_TENSE}; //arg for RiTa
+var plural = {number: RiTa.PLURAL}; //arg for RiTa
   
 var dayNight = [
   "day",
@@ -348,16 +347,16 @@ var dayNight = [
 ];
   
 var placeDesc = [
-  "Through the " + `${rita.randomWord('jj')} ` + "and " + `${r.randomWord('jj')} ` + "trees were scattered",
-  "In the " + `${r.randomWord('jj')} ` + "and " + `${r.randomWord('jj')} ` + "clearing sat",
-  "Wandering through the " + `${r.randomWord('jj')} ` + "and " + `${r.randomWord('jj')} ` + "grass came"
+  "Through the " + `${RiTa.randomWord('jj')} ` + "and " + `${RiTa.randomWord('jj')} ` + "trees were scattered",
+  "In the " + `${RiTa.randomWord('jj')} ` + "and " + `${RiTa.randomWord('jj')} ` + "clearing sat",
+  "Wandering through the " + `${RiTa.randomWord('jj')} ` + "and " + `${RiTa.randomWord('jj')} ` + "grass came"
 ];
   
 var weatherDesc = [
-  "The " + `${r.randomWord('jj')} ` + "sun " + `${r.conjugate(r.randomWord('vb'), pastTense)} ` + "down " + `${r.randomWord('rb')} ` + "overhead. ",
-  "It was snowing " + `${r.randomWord('rb')}, ` + "and everything was covered in a " + `${r.randomWord('jj')} ` + `${r.randomWord('nn')} ` + "of " + `${r.randomWord('jj')} ` + "white. ",
-  "The wind was blowing " + `${r.randomWord('rb')}, ` + "and the leaves of the trees " + `${r.conjugate(r.randomWord('vb'), pastTense)} ` + `${r.randomWord('rb')} ` + "as it " + `${r.conjugate(r.randomWord('vb'), pastTense)} ` + "through them. ",
-  "It was a " + `${r.randomWord('jj')}, ` + "rainy day, " + "and some " + `${r.randomWord('jj')} ` + "drizzle was just beginning to "  + `${r.randomWord('rb')} ` + "fall " + "afresh. "
+  "The " + `${RiTa.randomWord('jj')} ` + "sun " + `${RiTa.conjugate(r.randomWord('vb'), pastTense)} ` + "down " + `${RiTa.randomWord('rb')} ` + "overhead. ",
+  "It was snowing " + `${RiTa.randomWord('rb')}, ` + "and everything was covered in a " + `${RiTa.randomWord('jj')} ` + `${RiTa.randomWord('nn')} ` + "of " + `${RiTa.randomWord('jj')} ` + "white. ",
+  "The wind was blowing " + `${RiTa.randomWord('rb')}, ` + "and the leaves of the trees " + `${RiTa.conjugate(r.randomWord('vb'), pastTense)} ` + `${RiTa.randomWord('rb')} ` + "as it " + `${RiTa.conjugate(r.randomWord('vb'), pastTense)} ` + "through them. ",
+  "It was a " + `${RiTa.randomWord('jj')}, ` + "rainy day, " + "and some " + `${RiTa.randomWord('jj')} ` + "drizzle was just beginning to "  + `${RiTa.randomWord('rb')} ` + "fall " + "afresh. "
 ];
   
   
@@ -369,9 +368,10 @@ var rollTime = dayNight[Math.floor(Math.random()*dayNight.length)];
 function exposition() {
   
   
- var exposition = "It was a " + `${r.randomWord('jj')} ` + rollTime + ", and the forest was " + `${r.randomWord('jj')}. ` + rollPlace + " a number of creatures, the heroes of our story;" + charList + finalChar + ". " + rollWeather;
+ var exposition = "It was a " + `${RiTa.randomWord('jj')} ` + rollTime + ", and the forest was " + `${RiTa.randomWord('jj')}. ` + rollPlace + " a number of creatures, the heroes of our story;" + charList + finalChar + ". " + rollWeather;
  
  console.log(exposition);
+  $('div#output').html(exposition);
   
 }
   
@@ -380,14 +380,14 @@ function exposition() {
 function charDesc() {
   var currentChar = characters[0];
   
-  var description = "The " + currentChar + " was a " + `${r.randomWord('jj')} ` + currentChar + ", " + `${r.randomWord('jj')}` + ", " + `${r.randomWord('jj')}` + ", and " + `${r.randomWord('jj')}` + ". The " + currentChar + " enjoyed " + `${r.pluralize(r.randomWord('nn'))}` + ", but hated " + `${r.pluralize(r.randomWord('nn'))}` + ". At this particular moment, it felt " + `${r.randomWord('jj')}` + ", with shades of " + `${r.randomWord('jj')}` + ". ";
+  var description = "The " + currentChar + " was a " + `${RiTa.randomWord('jj')} ` + currentChar + ", " + `${RiTa.randomWord('jj')}` + ", " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.randomWord('jj')}` + ". The " + currentChar + " enjoyed " + `${RiTa.pluralize(r.randomWord('nn'))}` + ", but hated " + `${RiTa.pluralize(r.randomWord('nn'))}` + ". At this particular moment, it felt " + `${RiTa.randomWord('jj')}` + ", with shades of " + `${RiTa.randomWord('jj')}` + ". ";
   
  console.log(description);
   
 }
   
 function verbedAdverb() {
- return `${r.conjugate(r.randomWord('vb'), pastTense)} ` + `${r.randomWord('rb')}`;
+ return `${RiTa.conjugate(r.randomWord('vb'), pastTense)} ` + `${RiTa.randomWord('rb')}`;
 }
   
   
@@ -396,7 +396,7 @@ function charActionFirst() {
   var currentChar = characters[0];
   var nextChar = characters[1];
   
-  var action = "The " + currentChar + " " + verbedAdverb() + ", " + verbedAdverb() + ", then " + verbedAdverb() + ". It was " + `${r.randomWord('jj')}` + ", and " + `${r.conjugate(r.randomWord('vb'), pastTense)} ` + "the " + `${r.randomWord('nn')}` + ". "; 
+  var action = "The " + currentChar + " " + verbedAdverb() + ", " + verbedAdverb() + ", then " + verbedAdverb() + ". It was " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.conjugate(r.randomWord('vb'), pastTense)} ` + "the " + `${RiTa.randomWord('nn')}` + ". "; 
   
   console.log(action);
 }
@@ -404,7 +404,7 @@ function charActionFirst() {
 function charAction() {
   var currentChar = characters[0];
   
-  var action = "Nearby, the " + currentChar + " " + verbedAdverb() + ", " + verbedAdverb() + ", then " + verbedAdverb() + ". It was " + `${r.randomWord('jj')}` + ", and " + `${r.conjugate(r.randomWord('vb'), pastTense)} ` + "the " + `${r.randomWord('nn')}` + ". "; 
+  var action = "Nearby, the " + currentChar + " " + verbedAdverb() + ", " + verbedAdverb() + ", then " + verbedAdverb() + ". It was " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.conjugate(r.randomWord('vb'), pastTense)} ` + "the " + `${RiTa.randomWord('nn')}` + ". "; 
   
   console.log(action);
 }
@@ -414,7 +414,7 @@ function charSpeech() {
   var currentChar = characters[0];
   var nextChar = characters[1];
   
-  `${r.pluralize(r.randomWord('nn'))}` 
+  `${RiTa.pluralize(r.randomWord('nn'))}` 
   
   var rm = new r.RiMarkov(3);
   
@@ -426,7 +426,7 @@ function charSpeech() {
     console.log(r.sentences[i]);
   } */
   
-  var speech = "It approached the " + prevChar + ", " + verbedAdverb() + " to it, " + "and said: " + " \n'Excuse me, but I was wondering: " + `${rm.generateSentences(20)} ` + "'" + "\n'Actually,' responded the " + prevChar + ` ${r.randomWord('rb')}` + ", 'I think you'll find the following. " +  `${rm.generateSentences(20)} ` + "'" + "The " + currentChar + " felt " + `${r.randomWord('jj')} ` + "at this, and " + verbedAdverb() + ".";
+  var speech = "It approached the " + prevChar + ", " + verbedAdverb() + " to it, " + "and said: " + " \n'Excuse me, but I was wondering: " + `${rm.generateSentences(20)} ` + "'" + "\n'Actually,' responded the " + prevChar + ` ${RiTa.randomWord('rb')}` + ", 'I think you'll find the following. " +  `${rm.generateSentences(20)} ` + "'" + "The " + currentChar + " felt " + `${RiTa.randomWord('jj')} ` + "at this, and " + verbedAdverb() + ".";
   
    console.log(speech);
 }

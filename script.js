@@ -368,7 +368,7 @@ var rollTime = dayNight[Math.floor(Math.random()*dayNight.length)];
 function exposition() {
   
   
- var exposition = "<br/><br/>It was a " + `${RiTa.randomWord('jj')} ` + rollTime + ", and the forest was " + `${RiTa.randomWord('jj')}. ` + rollPlace + " a number of creatures, the heroes of our story;" + charList + finalChar + ". " + rollWeather;
+ var exposition = "<p>It was a " + `${RiTa.randomWord('jj')} ` + rollTime + ", and the forest was " + `${RiTa.randomWord('jj')}. ` + rollPlace + " a number of creatures, the heroes of our story;" + charList + finalChar + ". " + rollWeather + "</p>";
  
  console.log(exposition);
   $('div#output').append(exposition);
@@ -380,7 +380,7 @@ function exposition() {
 function charDesc() {
   var currentChar = characters[0];
   
-  var description = "The " + currentChar + " was a " + `${RiTa.randomWord('jj')} ` + currentChar + ", " + `${RiTa.randomWord('jj')}` + ", " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.randomWord('jj')}` + ". The " + currentChar + " enjoyed " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ", but hated " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ". At this particular moment, it felt " + `${RiTa.randomWord('jj')}` + ", with shades of " + `${RiTa.randomWord('jj')}` + ". ";
+  var description = "<p>The " + currentChar + " was a " + `${RiTa.randomWord('jj')} ` + currentChar + ", " + `${RiTa.randomWord('jj')}` + ", " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.randomWord('jj')}` + ". The " + currentChar + " enjoyed " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ", but hated " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ". At this particular moment, it felt " + `${RiTa.randomWord('jj')}` + ", with shades of " + `${RiTa.randomWord('jj')}` + ". </p>";
   
  console.log(description);
   
@@ -425,17 +425,17 @@ function charSpeech() {
 
   RiTa.sentences = rm.generateSentences(20);
 
-  for (i = 0; i < RiTa.sentences.length; i++) {
-    console.log(RiTa.sentences[i]);
-    $('div#output').append(RiTa.sentences[i] + " ");
-  }
+  // for (i = 0; i < RiTa.sentences.length; i++) {
+    // console.log(RiTa.sentences[i]);
+    // $('div#output').append(RiTa.sentences[i]);
+ // }
   
-  var speech = "It approached the " + prevChar + ", " + verbedAdverb() + " to it, " + "and said: " + " <br/></br/>'Excuse me, but I was wondering: " + charSpeech() + "'" + "\n'Actually,' responded the " + prevChar + ` ${RiTa.randomWord('rb')}` + ", 'I think you'll find the following. " +  charSpeech() + "'" + "<br/><br/>The " + currentChar + " felt " + `${RiTa.randomWord('jj')} ` + "at this, and " + verbedAdverb() + ". ";
+  
+  var speech = "It approached the " + prevChar + ", " + verbedAdverb() + " to it, " + "and said: " + " <br/></br/>'Excuse me, but I was wondering: " + RiTa.sentences + "'" + "\n'Actually,' responded the " + prevChar + ` ${RiTa.randomWord('rb')}` + ", 'I think you'll find the following. " +  RiTa.sentences + "'" + "<br/><br/>The " + currentChar + " felt " + `${RiTa.randomWord('jj')} ` + "at this, and " + verbedAdverb() + ". ";
   
 }
-   /* console.log(speech);
+   console.log(speech);
   $('div#output').append(speech);
-} */
   
   
 // WHAT GOES ON THE PAGE

@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 var foresttemplate = tracery.createGrammar(
    {
-	"origin":["#forest#\n#forest#\n#forest#\n#forest#\n#forest#\n#forest#\n#forest#"],
+	"origin":["#forest#<br/>#forest#<br/>#forest#<br/>#forest#<br/>#forest#<br/>#forest#<br/>#forest#"],
 	"forest":["#tree##tree##tree##tree##tree##tree##tree##tree##tree#",
 "#tree##forestry##tree#",
 "#tree##tree##forestry#",
@@ -464,7 +464,6 @@ for (i = 0; i < characters.length; i++) {
   charDesc();
   charSpeech();
   }
-  // characters.splice(0,1);
  characters.push(characters.shift());  // moves first character to end of array so we can start over
 }
   

@@ -13,6 +13,11 @@ h1, h2 {
   text-align: center;
 }
 
+h3 a {
+  display: block;
+ text-align: right;
+}
+
 #trace {
   float: left;
 font-size: 1.2em;

@@ -24,17 +24,17 @@ $(document).ready(function() {
 
 var foresttemplate = tracery.createGrammar(
    {
-	"origin":["#forest#<br/>#forest#<br/>#forest#<br/>#forest#<br/>#forest#<br/>#forest#<br/>#forest#"],
+	"origin":["#forest#<br/>#forest#<br/>#forest#<br/>#forest#<br/>#forest#<br/>#forest#<br/>#forest#<br/>#forest#<br/>#forest#<br/>#forest#<br/>#forest#"],
 	"forest":["#tree##tree##tree##tree##tree##tree##tree##tree##tree#",
-"#tree##forestry##tree#",
-"#tree##tree##forestry#",
-"#forestry##tree##tree#",
-"#tree##forestry##wildlife#",
-"#forestry##wildlife##tree#",
-"#tree##wildlife##forestry#",
-"#wildlife##forestry##tree#",
-"#forestry##tree##wildlife#",
-"#wildlife##tree##forestry#"
+"#tree##forestry##tree##forestry#",
+"#tree##tree##forestry##forestry#",
+"#forestry##tree##tree##forestry#",
+"#tree##forestry##wildlife##forestry#",
+"#forestry##wildlife##tree##forestry#",
+"#tree##wildlife##forestry##forestry#",
+"#wildlife##forestry##tree##forestry#",
+"#forestry##tree##wildlife##forestry#",
+"#wildlife##tree##forestry##forestry#"
 ],
 	"forestry": ["#tree##wildlife##tree##wildlife##tree##wildlife##tree#",
 "#tree##wildlife##tree##tree##tree##tree##tree#",
@@ -341,7 +341,7 @@ var pastTense = {tense: RiTa.PAST_TENSE}; //arg for RiTa
 function title() {
   var titleword = `${RiTa.randomWord('jj')} `;
   var titlewordcase = titleword[0].toUpperCase() + titleword.slice(1);
-  var title = "<h1>The " + `${RiTa.randomWord('jj').toUpperCase()} ` + " Forest</h1>";
+  var title = "<h1>The " + titlewordcase + " Forest</h1>";
   $('div#title').append(title);
 }
   

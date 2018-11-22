@@ -336,6 +336,14 @@ $('div#trace').html(forestoutput);
   
 // exposition
 var pastTense = {tense: RiTa.PAST_TENSE}; //arg for RiTa
+
+  
+function title() {
+  var titleword = `${RiTa.randomWord('jj')} `;
+  var titlewordcase = titleword[0].toUpperCase() + titleword.slice(1);
+  var title = "<h1>The " + `${RiTa.randomWord('jj').toUpperCase()} ` + " Forest</h1>";
+  $('div#title').append(title);
+}
   
 var plural = {number: RiTa.PLURAL}; //arg for RiTa
   
@@ -434,12 +442,13 @@ var speech = "It approached the " + prevChar + ", " + verbedAdverb() + " to it, 
   
 // WHAT GOES ON THE PAGE
   
-// exposition 
+// exposition
   
 exposition()
   
 var i;
 for (i = 0; i < 1; i++) {
+ title();
  charDesc();
  charActionFirst();
  characters.push(characters.shift());  // moves first character to end of array so we can start over

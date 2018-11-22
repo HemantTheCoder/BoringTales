@@ -380,7 +380,7 @@ function exposition() {
 function charDesc() {
   var currentChar = characters[0];
   
-  var description = "<p>The " + currentChar + " was a " + `${RiTa.randomWord('jj')} ` + currentChar + ", " + `${RiTa.randomWord('jj')}` + ", " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.randomWord('jj')}` + ". The " + currentChar + " enjoyed " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ", but hated " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ". At this particular moment, it felt " + `${RiTa.randomWord('jj')}` + ", with shades of " + `${RiTa.randomWord('jj')}` + ". </p>";
+  var description = "The " + currentChar + " was a " + `${RiTa.randomWord('jj')} ` + currentChar + ", " + `${RiTa.randomWord('jj')}` + ", " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.randomWord('jj')}` + ". The " + currentChar + " enjoyed " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ", but hated " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ". At this particular moment, it felt " + `${RiTa.randomWord('jj')}` + ", with shades of " + `${RiTa.randomWord('jj')}` + ". ";
   
  console.log(description);
   
@@ -406,7 +406,7 @@ function charActionFirst() {
 function charAction() {
   var currentChar = characters[0];
   
-  var action = "Nearby, the " + currentChar + " " + verbedAdverb() + ", " + verbedAdverb() + ", then " + verbedAdverb() + ". It was " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.conjugate(RiTa.randomWord('vb'), pastTense)} ` + "the " + `${RiTa.randomWord('nn')}` + ". "; 
+  var action = "<br/><br/>Nearby, the " + currentChar + " " + verbedAdverb() + ", " + verbedAdverb() + ", then " + verbedAdverb() + ". It was " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.conjugate(RiTa.randomWord('vb'), pastTense)} ` + "the " + `${RiTa.randomWord('nn')}` + ". "; 
   
   console.log(action);
   $('div#output').append(action);
@@ -426,9 +426,9 @@ function charSpeech() {
   RiTa.sentences = rm.generateSentences(20);
 
   // for (i = 0; i < RiTa.sentences.length; i++) {
-    // console.log(RiTa.sentences[i]);
-    // $('div#output').append(RiTa.sentences[i]);
- // }
+   console.log(RiTa.sentences[i]);
+   $('div#output').append(RiTa.sentences[i]);
+ }
   
   
   var speech = "It approached the " + prevChar + ", " + verbedAdverb() + " to it, " + "and said: " + " <br/></br/>'Excuse me, but I was wondering: " + RiTa.sentences + "'" + "\n'Actually,' responded the " + prevChar + ` ${RiTa.randomWord('rb')}` + ", 'I think you'll find the following. " +  RiTa.sentences + "'" + "<br/><br/>The " + currentChar + " felt " + `${RiTa.randomWord('jj')} ` + "at this, and " + verbedAdverb() + ". ";

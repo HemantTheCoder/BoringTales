@@ -202,6 +202,18 @@ function title() {
   if (galleryoutput.indexOf("🗾") >= 0) { 
       art.push("map of Japan");
   }
+  if (galleryoutput.indexOf("🏔") >= 0) { 
+      art.push("snow-capped mountain");
+  }
+  if (galleryoutput.indexOf("🗻") >= 0) { 
+      art.push("small snow-capped mountain");
+  }
+  if (galleryoutput.indexOf("🌋") >= 0) { 
+      art.push("volcano");
+  }
+  if (galleryoutput.indexOf("🗾") >= 0) { 
+      art.push("map of Japan");
+  }
   
         "🏕",
         "⛺️",

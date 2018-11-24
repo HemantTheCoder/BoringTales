@@ -9,7 +9,7 @@ var end = "<h2>THE END</h2>" + "<h3><a href='/forest.html'>< prev </a>&nbsp;&nbs
 
 var gallerytemplate = tracery.createGrammar(
    {
-    "origin": [" ________________<br/>╱|_____________ ╱|<br/>  | |⬜⬜⬜⬜⬜⬜|  |<br/>  | |⬜#art#⬜⬜#art#⬜|  |<br/>  | |⬜⬜⬜⬜⬜⬜|  |<br/>  |╱ ￣ #visitors##visitors##visitors##visitors# ￣ |╱<br/> ￣#visitors##visitors##visitors##visitors##visitors#￣"],
+    "origin": [".　 ________________<br/>╱ |_____________ ╱ |<br/>  | |⬜⬜⬜⬜⬜⬜|  |<br/>  | |⬜#art#⬜⬜#art#⬜|  |<br/>  | |⬜⬜⬜⬜⬜⬜|  |<br/>  |╱ ￣ #visitors##visitors##visitors##visitors# ￣ |╱<br/> ￣#visitors##visitors##visitors##visitors##visitors#￣"],
     "visitors" : [
         "🚶", 
         "🏃", 
@@ -115,30 +115,38 @@ function title() {
   var characters = [];
   var charList = []; // list the characters with 'a'
   var finalChar = [];
+  var pronouns = [];
   
   
   if (galleryoutput.indexOf("🚶") >= 0) { 
-    characters.push("man"); }
+    characters.push("man");
+    pronouns.push("he");
+  }
   
   if (galleryoutput.indexOf("🏃") >= 0) { 
       characters.push("running man");
+      pronouns.push("he");
   }
   if (galleryoutput.indexOf("💃") >= 0) { 
       characters.push("dancing lady");
+      pronouns.push("she");
   }
   if (galleryoutput.indexOf("👫") >= 0) { 
       characters.push("couple");
+      pronouns.push("they");
   }
   if (galleryoutput.indexOf("👬") >= 0) { 
       characters.push("couple");
+      pronouns.push("they");
   }
   if (galleryoutput.indexOf("👭") >= 0) { 
       characters.push("couple");
+      pronouns.push("they");
   }
   
   var i;
   for (i = 0; i < (characters.length - 1); i++) { 
-    charList.push(" a " + characters[i]);
+    charList.push(" the " + characters[i]);
   } // formatted version of character list
 
   for (i = (characters.length - 1); i < (characters.length); i++) {
@@ -323,13 +331,15 @@ for (i = 0; i < 1; i++) {
  charDesc();
  charActionFirst();
  characters.push(characters.shift());  // moves first character to end of array so we can start over
+pronouns.push(pronouns.shift()); 
 }
 
   for (i = 0; i < characters.length-1; i++) { 
   charAction();
   charDesc();
   charSpeech();
- characters.push(characters.shift());  // moves first character to end of array so we can start over
+  characters.push(characters.shift());  // moves first character to end of array so we can start over
+  pronouns.push(pronouns.shift()); 
 }
   
 for (i = characters.length - 1; i < characters.length; i++) { 
@@ -337,7 +347,8 @@ for (i = characters.length - 1; i < characters.length; i++) {
   charDesc();
   charSpeech();
   ending();
- characters.push(characters.shift());  // moves first character to end of array so we can start over
+  characters.push(characters.shift());  
+  pronouns.push(pronouns.shift());  // moves first character to end of array so we can start over
 }
   
   title();

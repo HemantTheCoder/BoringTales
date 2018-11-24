@@ -102,6 +102,8 @@ var gallerytemplate = tracery.createGrammar(
   console.log(galleryoutput);
   $('div#trace').append(galleryoutput);
   
+
+// story title  
 function title() {
   var titleword = `${RiTa.randomWord('jj')} `;
   var titlewordcase = titleword[0].toUpperCase() + titleword.slice(1);
@@ -318,7 +320,6 @@ exposition()
   
 var i;
 for (i = 0; i < 1; i++) {
- title();
  charDesc();
  charActionFirst();
  characters.push(characters.shift());  // moves first character to end of array so we can start over

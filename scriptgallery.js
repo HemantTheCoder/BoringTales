@@ -88,7 +88,7 @@ var gallerytemplate = tracery.createGrammar(
     ]
 });
   
-// output the forest as a single string of characters
+// output the gallery as a single string of characters
   var value = $(this).val().replace(/\n/g, '<br/>');
   
   var galleryoutput = gallerytemplate.flatten('#origin#');
@@ -103,72 +103,28 @@ function title() {
 }
     
 // figure out who the characters present are - maybe there's a more elegant way to do this, but i don't know it.
-  /* 
   var characters = [];
   var charList = []; // list the characters with 'a'
   var finalChar = [];
   
-  if (forestoutput.indexOf("🐑") >= 0) { 
-    characters.push("sheep"); }
-  if (forestoutput.indexOf("🐐") >= 0) { 
-      characters.push("goat");
+  
+  if (galleryoutput.indexOf("🚶") >= 0) { 
+    characters.push("man"); }
+  
+  if (galleryoutput.indexOf("🏃") >= 0) { 
+      characters.push("running man");
   }
-  if (forestoutput.indexOf("🐘") >= 0) { 
-      characters.push("elephant");
+  if (galleryoutput.indexOf("💃") >= 0) { 
+      characters.push("dancing lady");
   }
-  if (forestoutput.indexOf("🐁") >= 0) { 
-      characters.push("mouse");
+  if (galleryoutput.indexOf("👫") >= 0) { 
+      characters.push("couple");
   }
-  if (forestoutput.indexOf("🐇") >= 0) { 
-      characters.push("rabbit");
+  if (galleryoutput.indexOf("👬") >= 0) { 
+      characters.push("couple");
   }
-  if (forestoutput.indexOf("🐿") >= 0) { 
-      characters.push("squirrel");
-  }
-  if (forestoutput.indexOf("🦃") >= 0) { 
-      characters.push("turkey");
-  }
-  if (forestoutput.indexOf("🐓") >= 0) { 
-      characters.push("chicken");
-  }
-  if (forestoutput.indexOf("🐥") >= 0) { 
-      characters.push("chick");
-  }
-  if (forestoutput.indexOf("🕊") >= 0) { 
-      characters.push("dove");
-  }
-  if (forestoutput.indexOf("🐊") >= 0) { 
-      characters.push("crocodile");
-  }
-  if (forestoutput.indexOf("🐢") >= 0) { 
-      characters.push("turtle");
-  }
-  if (forestoutput.indexOf("🐍") >= 0) { 
-      characters.push("snake");
-  }
-  if (forestoutput.indexOf("🐌") >= 0) { 
-      characters.push("snail");
-  }
-  if (forestoutput.indexOf("🐛") >= 0) { 
-      characters.push("caterpillar");
-  }
-  if (forestoutput.indexOf("🐜") >= 0) { 
-      characters.push("ant");
-  }
-  if (forestoutput.indexOf("🐝") >= 0) { 
-      characters.push("bee");
-  }
-  if (forestoutput.indexOf("🐞") >= 0) { 
-      characters.push("ladybird");
-  }
-  if (forestoutput.indexOf("🐖") >= 0) { 
-      characters.push("pig");
-  }
-  if (forestoutput.indexOf("🐄") >= 0) { 
-      characters.push("cow");
-  }
-  if (forestoutput.indexOf("🐎") >= 0) { 
-      characters.push("horse");
+  if (galleryoutput.indexOf("👭") >= 0) { 
+      characters.push("couple");
   }
   
   var i;
@@ -177,13 +133,73 @@ function title() {
   } // formatted version of character list
 
   for (i = (characters.length - 1); i < (characters.length); i++) {
-    finalChar.push(", and a " + characters[i]);
+    finalChar.push(", and the " + characters[i]);
   }
   
+  var art = [];
+  var artList = [];
+  var finalArt = [];
+  
+  if (galleryoutput.indexOf("🚢") >= 0) { 
+    characters.push("ship"); }
+  
+  if (galleryoutput.indexOf("🎡") >= 0) { 
+      characters.push("ferris wheel");
+  }
+  if (galleryoutput.indexOf("🎢") >= 0) { 
+      characters.push("rollercoaster");
+  }
+  if (galleryoutput.indexOf("🎠") >= 0) { 
+      characters.push("carousel horse");
+  }
+  if (galleryoutput.indexOf("👬") >= 0) { 
+      characters.push("couple");
+  }
+  if (galleryoutput.indexOf("👭") >= 0) { 
+      characters.push("couple");
+  }
+  
+ 
+        "🎠",
+        "🏗",
+        "🌁",
+        "🗼",
+        "🏭",
+        "⛲️",
+        "🎑",
+        "⛰",
+        "🏔",
+        "🗻",
+        "🌋",
+        "🗾",
+        "🏕",
+        "⛺️",
+         "🏞",
+         "🌅",
+         "🌄",
+         "🏜",
+         "🏖",
+         "🏝",
+         "🌇",
+         "🌆",
+         "🏙",
+         "🌃",
+         "🌉",
+         "🌌",
+         "🌠",
+         "🎇",
+         "🎆",
+         "🌈",
+         "🏘",
+         "🏰",
+         "🏯",   
+         "🏟",
+         "🗽"
+  
   // log the forest trace and the cast of characters.
-$('div#trace').html(forestoutput);
+$('div#trace').html(galleryoutput);
 
-  console.log(forestoutput);
+  console.log(galleryoutput);
   console.log(characters);
   console.log(charList);
   console.log(finalChar);

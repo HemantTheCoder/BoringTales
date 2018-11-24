@@ -102,12 +102,14 @@ var gallerytemplate = tracery.createGrammar(
   console.log(galleryoutput);
   $('div#trace').append(galleryoutput);
   
+  var galleryname = [];
 
 // story title  
 function title() {
   var titleword = `${RiTa.randomWord('jj')} `;
   var titlewordcase = titleword[0].toUpperCase() + titleword.slice(1);
   var title = "<h1>The " + titlewordcase + " Gallery</h1>";
+  galleryname.push(titlewordcase);
   $('div#title').append(title);
 }
     
@@ -313,7 +315,7 @@ var rollTime = dayNight[Math.floor(Math.random()*dayNight.length)];
 function exposition() {
   
   
- var exposition = "<p>It was a " + `${RiTa.randomWord('jj')} ` + rollTime + ", and the forest was " + `${RiTa.randomWord('jj')}. ` + rollPlace + " a number of creatures, the heroes of our story;" + charList + finalChar + ". " + rollWeather + "</p>";
+ var exposition = "<p>It was a " + `${RiTa.randomWord('jj')} ` + rollTime + " at the " + galleryname + " Gallery, which was  " + `${RiTa.randomWord('jj')} ` + " and replete with " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ". " + rollPlace + " a number of visitors had arrived to gaze upon the fine art;" + charList + finalChar + ". " + rollWeather + "</p>";
  
  console.log(exposition);
   $('div#output').append(exposition);
@@ -375,7 +377,7 @@ var speech = "It approached the " + prevChar + ", " + verbedAdverb() + " to it, 
 }
   
   function ending() {
-    var ending = " 'I do wish you wouldn't all talk so much,' it said, " + `${RiTa.randomWord('rb')}` + ". ";
+    var ending = " 'I just like the colours,' " + pronouns[i] + " said, " + `${RiTa.randomWord('rb')}` + ". ";
 
   $('div#output').append(ending);
   }
@@ -383,15 +385,15 @@ var speech = "It approached the " + prevChar + ", " + verbedAdverb() + " to it, 
 // WHAT GOES ON THE PAGE
   
 // exposition
-  
-exposition()
+title();
+exposition();
   
 var i;
 for (i = 0; i < 1; i++) {
  charDesc();
  charActionFirst();
  characters.push(characters.shift());  // moves first character to end of array so we can start over
-pronouns.push(pronouns.shift()); 
+ pronouns.push(pronouns.shift()); 
 }
 
   for (i = 0; i < characters.length-1; i++) { 
@@ -410,8 +412,7 @@ for (i = characters.length - 1; i < characters.length; i++) {
   characters.push(characters.shift());  
   pronouns.push(pronouns.shift());  // moves first character to end of array so we can start over
 }
-  
-  title();
+
   fin();
   
 });

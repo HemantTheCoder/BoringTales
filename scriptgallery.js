@@ -158,37 +158,51 @@ function title() {
   var finalArt = [];
   
   if (galleryoutput.indexOf("🚢") >= 0) { 
-    characters.push("ship"); }
+     art.push("ship"); }
   
   if (galleryoutput.indexOf("🎡") >= 0) { 
-      characters.push("ferris wheel");
+      art.push("ferris wheel");
   }
   if (galleryoutput.indexOf("🎢") >= 0) { 
-      characters.push("rollercoaster");
+      art.push("rollercoaster");
   }
   if (galleryoutput.indexOf("🎠") >= 0) { 
-      characters.push("carousel horse");
+      art.push("carousel horse");
   }
-  if (galleryoutput.indexOf("👬") >= 0) { 
-      characters.push("couple");
+  if (galleryoutput.indexOf("🏗") >= 0) { 
+      art.push("crane");
   }
-  if (galleryoutput.indexOf("👭") >= 0) { 
-      characters.push("couple");
+  if (galleryoutput.indexOf("🌁") >= 0) { 
+      art.push("foggy landscape");
+  }
+  if (galleryoutput.indexOf("🗼") >= 0) { 
+      art.push("tower");
+  }
+  if (galleryoutput.indexOf("🏭") >= 0) { 
+      art.push("factory");
+  }
+  if (galleryoutput.indexOf("⛲️") >= 0) { 
+      art.push("fountain");
+  }
+  if (galleryoutput.indexOf("🎑") >= 0) { 
+      art.push("moon viewing ceremony");
+  }
+  if (galleryoutput.indexOf("⛰") >= 0) { 
+      art.push("mountain");
+  }
+  if (galleryoutput.indexOf("🏔") >= 0) { 
+      art.push("snow-capped mountain");
+  }
+  if (galleryoutput.indexOf("🗻") >= 0) { 
+      art.push("small snow-capped mountain");
+  }
+  if (galleryoutput.indexOf("🌋") >= 0) { 
+      art.push("volcano");
+  }
+  if (galleryoutput.indexOf("🗾") >= 0) { 
+      art.push("map of Japan");
   }
   
- 
-        "🎠",
-        "🏗",
-        "🌁",
-        "🗼",
-        "🏭",
-        "⛲️",
-        "🎑",
-        "⛰",
-        "🏔",
-        "🗻",
-        "🌋",
-        "🗾",
         "🏕",
         "⛺️",
          "🏞",

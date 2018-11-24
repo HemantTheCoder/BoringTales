@@ -295,9 +295,9 @@ var dayNight = [
 ];
   
 var placeDesc = [
-  "Through the " + `${RiTa.randomWord('jj')} ` + "and " + `${RiTa.randomWord('jj')} ` + "trees were scattered",
-  "In the " + `${RiTa.randomWord('jj')} ` + "and " + `${RiTa.randomWord('jj')} ` + "clearing sat",
-  "Wandering through the " + `${RiTa.randomWord('jj')} ` + "and " + `${RiTa.randomWord('jj')} ` + "grass came"
+  "The gallery was old, and a little " + `${RiTa.randomWord('jj')} ` + "and " + `${RiTa.randomWord('jj')}` + ", but despite this, ",
+  "The gallery was the finest of its kind, beloved by critics and the elite; it was rather " + `${RiTa.randomWord('jj')} ` + "and " + `${RiTa.randomWord('jj')}` + ", and ",
+  "The gallery was popular amongst visitors, but considered rather " + `${RiTa.randomWord('jj')} ` + "and " + `${RiTa.randomWord('jj')} ` + "by the critics. Nonetheless, "
 ];
   
 var weatherDesc = [
@@ -327,7 +327,7 @@ function exposition() {
 function charDesc() {
   var currentChar = characters[0];
   
-  var description = "The " + currentChar + " was a " + `${RiTa.randomWord('jj')} ` + currentChar + ", " + `${RiTa.randomWord('jj')}` + ", " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.randomWord('jj')}` + ". The " + currentChar + " enjoyed " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ", but hated " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ". At this particular moment, it felt " + `${RiTa.randomWord('jj')}` + ", with shades of " + `${RiTa.randomWord('jj')}` + ". ";
+  var description = "The " + currentChar + " was a " + `${RiTa.randomWord('jj')} ` + currentChar + ", " + `${RiTa.randomWord('jj')}` + ", " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.randomWord('jj')}` + ". The " + currentChar + " enjoyed " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ", but hated " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ". At this particular moment, " + pronouns[i] + " felt " + `${RiTa.randomWord('jj')}` + ", with shades of " + `${RiTa.randomWord('jj')}` + ". ";
   
  console.log(description);
   

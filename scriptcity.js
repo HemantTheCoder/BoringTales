@@ -324,10 +324,10 @@ var rollArt = artDesc[Math.floor(Math.random()*artDesc.length)];
 function exposition() {
   
   
- var exposition = "<p>It was a " + `${RiTa.randomWord('jj')} ` + dayNight + " at the " + cityname + " Gallery, which was  " + `${RiTa.randomWord('jj')} ` + " and replete with " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ". " + rollPlace + " a number of visitors had arrived to gaze upon the fine art;" + charList + finalChar + ". " + rollArt + "</p>";
+ var exposition = "<p>It was a " + `${RiTa.randomWord('jj')} ` + dayNight[0] + " in the " + cityname + " City, which was  " + `${RiTa.randomWord('jj')} ` + " and also rather " + `${RiTa.randomWord('jj')}` + ". " + rollPlace + " a number of visitors had arrived to gaze upon the fine art;" + charList + finalChar + ". " + rollArt + "</p>";
  
  console.log(exposition);
-console.log(dayNight);
+console.log(dayNight[0]);
   $('div#output').append(exposition);
   
 }
@@ -402,13 +402,13 @@ var rollEnd = ending[Math.floor(Math.random()*ending.length)];
   
 // exposition
 title();
+rollTime();
 exposition();
   
 var i;
 for (i = 0; i < 1; i++) {
  charDesc();
  charActionFirst();
- rollTime();
  characters.push(characters.shift());  // moves first character to end of array so we can start over
 }
 

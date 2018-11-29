@@ -300,22 +300,20 @@ var placeDesc = [
   "The gallery was popular amongst visitors, but considered rather " + `${RiTa.randomWord('jj')} ` + "and " + `${RiTa.randomWord('jj')} ` + "by the critics. Nonetheless, "
 ];
   
-var weatherDesc = [
-  "The " + `${RiTa.randomWord('jj')} ` + "sun " + `${RiTa.conjugate(RiTa.randomWord('vb'), pastTense)} ` + "down " + `${RiTa.randomWord('rb')} ` + "overhead. ",
-  "It was snowing " + `${RiTa.randomWord('rb')}, ` + "and everything was covered in a " + `${RiTa.randomWord('jj')} ` + `${RiTa.randomWord('nn')} ` + "of " + `${RiTa.randomWord('jj')} ` + "white. ",
-  "The wind was blowing " + `${RiTa.randomWord('rb')}, ` + "and the leaves of the trees " + `${RiTa.conjugate(RiTa.randomWord('vb'), pastTense)} ` + `${RiTa.randomWord('rb')} ` + "as it " + `${RiTa.conjugate(RiTa.randomWord('vb'), pastTense)} ` + "through them. ",
-  "It was a " + `${RiTa.randomWord('jj')}, ` + "rainy day, " + "and some " + `${RiTa.randomWord('jj')} ` + "drizzle was just beginning to "  + `${RiTa.randomWord('rb')} ` + "fall " + "afresh. "
+var artDesc = [
+  "A new exhibition had recently opened; a showcase of " + `${RiTa.randomWord('jj')} ` + "art, featuring " + `${RiTa.randomWord('jj')} ` + "paintings of a " + art[1] + ", and a " + art[0] + ". ",
+  "The gallery's current exhibition had been open for some time, but remained well-attended; it was a showcase of " + `${RiTa.randomWord('jj')} ` + "art, featuring " + `${RiTa.randomWord('jj')} ` + "paintings of a " + art[1] + ", and a " + art[0] + ". "
 ];
   
 var rollPlace = placeDesc[Math.floor(Math.random()*placeDesc.length)];
-var rollWeather = weatherDesc[Math.floor(Math.random()*weatherDesc.length)];
+var rollArt = artDesc[Math.floor(Math.random()*artDesc.length)];
 var rollTime = dayNight[Math.floor(Math.random()*dayNight.length)];
   
 
 function exposition() {
   
   
- var exposition = "<p>It was a " + `${RiTa.randomWord('jj')} ` + rollTime + " at the " + galleryname + " Gallery, which was  " + `${RiTa.randomWord('jj')} ` + " and replete with " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ". " + rollPlace + " a number of visitors had arrived to gaze upon the fine art;" + charList + finalChar + ". " + rollWeather + "</p>";
+ var exposition = "<p>It was a " + `${RiTa.randomWord('jj')} ` + rollTime + " at the " + galleryname + " Gallery, which was  " + `${RiTa.randomWord('jj')} ` + " and replete with " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ". " + rollPlace + " a number of visitors had arrived to gaze upon the fine art;" + charList + finalChar + ". " + rollArt + "</p>";
  
  console.log(exposition);
   $('div#output').append(exposition);

@@ -298,10 +298,27 @@ var pastTense = {tense: RiTa.PAST_TENSE}; //arg for RiTa
   
 var plural = {number: RiTa.PLURAL}; //arg for RiTa
   
-var dayNight = [
-  "day",
-  "night"
-];
+var dayNight = [];
+
+function rollTime() 
+  { 
+    if (cityoutput.indexOf("🌞") >= 0) { 
+      dayNight.pop("day");
+  } else if (cityoutput.indexOf("⛅️") >= 0) { 
+      dayNight.pop("day");
+  } else if (cityoutput.indexOf("🌤") >= 0) { 
+      dayNight.pop("day");
+  } else if (cityoutput.indexOf("🌤") >= 0) { 
+      dayNight.pop("day");
+  } else if (cityoutput.indexOf("🌥") >= 0) { 
+      dayNight.pop("day");
+  } else if (cityoutput.indexOf("🌦") >= 0) { 
+      dayNight.pop("day"); }
+  else {
+    dayNight.pop("night"); 
+  }
+};
+  
   
 var placeDesc = [
   "The gallery was old, and a little " + `${RiTa.randomWord('jj')} ` + "and " + `${RiTa.randomWord('jj')}` + ", but despite this, ",
@@ -317,14 +334,15 @@ var artDesc = [
   
 var rollPlace = placeDesc[Math.floor(Math.random()*placeDesc.length)];
 var rollArt = artDesc[Math.floor(Math.random()*artDesc.length)];
-var rollTime = dayNight[Math.floor(Math.random()*dayNight.length)];
+
 
 function exposition() {
   
   
- var exposition = "<p>It was a " + `${RiTa.randomWord('jj')} ` + rollTime + " at the " + cityname + " Gallery, which was  " + `${RiTa.randomWord('jj')} ` + " and replete with " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ". " + rollPlace + " a number of visitors had arrived to gaze upon the fine art;" + charList + finalChar + ". " + rollArt + "</p>";
+ var exposition = "<p>It was a " + `${RiTa.randomWord('jj')} ` + dayNight + " at the " + cityname + " Gallery, which was  " + `${RiTa.randomWord('jj')} ` + " and replete with " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ". " + rollPlace + " a number of visitors had arrived to gaze upon the fine art;" + charList + finalChar + ". " + rollArt + "</p>";
  
  console.log(exposition);
+console.log(dayNight);
   $('div#output').append(exposition);
   
 }
@@ -405,6 +423,7 @@ var i;
 for (i = 0; i < 1; i++) {
  charDesc();
  charActionFirst();
+ rollTime();
  characters.push(characters.shift());  // moves first character to end of array so we can start over
  pronouns.push(pronouns.shift()); 
  pronounsUpper.push(pronounsUpper.shift());
@@ -423,7 +442,7 @@ for (i = characters.length - 1; i < characters.length; i++) {
   charAction();
   charDesc();
   charSpeech();
-  console.log(pronouns);
+  console.log(dayNight);
   punchline();
   characters.push(characters.shift());  
   pronouns.push(pronouns.shift());  // moves first character to end of array so we can start over

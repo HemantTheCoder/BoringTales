@@ -312,10 +312,16 @@ var artDesc = [
   "The gallery's current exhibition had been open for some time, but remained well-attended; it was a showcase of " + `${RiTa.randomWord('jj')} ` + "art, featuring " + `${RiTa.randomWord('jj')} ` + "paintings of a " + art[1] + ", and a " + art[0] + ". "
 ];
   
+var ending = [
+      " 'I just like the colours,' " + pronouns[pronouns.length - 1] + " said, " + `${RiTa.randomWord('rb')}` + ". ",
+      " 'I just thought it was nice,' " + pronouns[pronouns.length - 1] + " said, " + `${RiTa.randomWord('rb')}` + ". ",
+      " 'Actually, I hate art,' " + pronouns[pronouns.length - 1] + " said, " + `${RiTa.randomWord('rb')}` + ". "
+      ]; 
+  
 var rollPlace = placeDesc[Math.floor(Math.random()*placeDesc.length)];
 var rollArt = artDesc[Math.floor(Math.random()*artDesc.length)];
 var rollTime = dayNight[Math.floor(Math.random()*dayNight.length)];
-  
+var rollEnd = ending[Math.floor(Math.random()*ending.length)];
 
 function exposition() {
   
@@ -381,11 +387,8 @@ var speech = pronounsUpper[i] + " approached the " + prevChar + ", " + verbedAdv
   $('div#output').append(speech);
 }
   
-  function ending() {
-    console.log(pronouns);
-    var ending = " 'I just like the colours,' " + pronouns[pronouns.length] + " said, " + `${RiTa.randomWord('rb')}` + ". ";
-
-  $('div#output').append(ending);
+  function punchline() {
+  $('div#output').append(rollEnd);
   }
   
 // WHAT GOES ON THE PAGE
@@ -416,7 +419,8 @@ for (i = characters.length - 1; i < characters.length; i++) {
   charAction();
   charDesc();
   charSpeech();
-  ending();
+  console.log(pronouns);
+  punchline();
   characters.push(characters.shift());  
   pronouns.push(pronouns.shift());  // moves first character to end of array so we can start over
   pronounsUpper.push(pronounsUpper.shift());

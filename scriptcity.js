@@ -5,7 +5,7 @@ function fin() {
   $("#end").append(end);
 }
   
-var end = "<h2>THE END</h2>" + "<h3><a href='/gallery.html'>< prev </a>&nbsp;&nbsp;<a href='https://github.com/emmawinston/nanogenmo18'>github</a></h3>";  
+var end = "<h2>THE END</h2>" + "<h3><a href='/gallery.html'>< prev </a>&nbsp;&nbsp;<a href='/index.html'>back to start</a>&nbsp;&nbsp;<a href='https://github.com/emmawinston/nanogenmo18'>github</a></h3>";  
 
 var citytemplate = tracery.createGrammar(
    {

@@ -113,7 +113,7 @@ var citytemplate = tracery.createGrammar(
 		"🌗",
 		"🌘",
 		"🌘",
-		"🌑 ",
+		"🌑",
 		"🌚"
 	],
 
@@ -240,19 +240,45 @@ function title() {
       weather.push("lightning storm");
   }
   if (cityoutput.indexOf("🌪") >= 0) { 
-      characters.push("tornado");
+      weather.push("tornado");
   }
-  if (cityoutput.indexOf("👭") >= 0) { 
-      characters.push("couple");
+  if (cityoutput.indexOf("💧") >= 0) { 
+      weather.push("rain");
+  }
+  if (cityoutput.indexOf("☄") >= 0) { 
+      weather.push("meteor shower");
+  }
+  if (cityoutput.indexOf("🌞") >= 0) {
+    weather.push("sunny");
+  }
+  if (cityoutput.indexOf("🌕") >= 0) {
+    weather.push("full moon");
+  }
+  if (cityoutput.indexOf("🌖") >= 0) {
+    weather.push("waxing moon");
+  }
+  if (cityoutput.indexOf("🌗") >= 0) {
+    weather.push("half moon");
+  }
+  if (cityoutput.indexOf("🌘") >= 0) {
+    weather.push("crescent moon");
+  }
+  if (cityoutput.indexOf("🌑") >= 0) {
+    weather.push("new moon");
+  }
+  if (cityoutput.indexOf("🌚") >= 0) {
+    weather.push("moon with a face");
   }
   
+                  
+  
   var i;
-  for (i = 0; i < (characters.length - 1); i++) { 
-    charList.push(" the " + characters[i]);
+  for (i = 0; i < (weather.length - 1); i++) { 
+    charList.push(" the " + weather[i]);
   } // formatted version of character list
 
-  for (i = (characters.length - 1); i < (characters.length); i++) {
-    finalChar.push(", and the " + characters[i]);
+  for (i = (weather.length - 1); i < (weather.length); i++) {
+    finalChar.push(", and the " + weather[i]);
   }
   
   var art = [];
@@ -271,7 +297,7 @@ function title() {
 $('div#trace').html(cityoutput);
 
   console.log(cityoutput);
-  console.log(characters);
+  console.log(weather);
   console.log(charList);
   console.log(finalChar);
   

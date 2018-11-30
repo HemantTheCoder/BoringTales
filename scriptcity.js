@@ -200,13 +200,11 @@ var citytemplate = tracery.createGrammar(
 });
   
 // output the gallery as a single string of characters
-  var value = $(this).val().replace(/\n/g, '<br/>');
-  
-  var cityoutput = citytemplate.flatten('#origin#');
+var cityoutput = citytemplate.flatten('#origin#');
   console.log(cityoutput);
   $('div#trace').append(cityoutput);
   
-  var cityname = [];
+var cityname = [];
 
 // story title  
 function title() {
@@ -219,10 +217,7 @@ function title() {
     
 // figure out what the weather is
   var weather = [];
-  var weatherList = []; // list the characters with 'a'
-  var finalWeather = [];
- 
-  
+  var weatherList = [];
   
   if (cityoutput.indexOf("☁️") >= 0) { 
     weather.push("It was a cloudy day");
@@ -271,31 +266,18 @@ function title() {
   }
   if (cityoutput.indexOf("⭐️" || "🌟") >= 0) {
     weather.push("It was a starry night");
-  }
+  }  
   
-                  
+function list() {
+  weatherList = weather.join(". ");
+}
+  
   
   var i;
   for (i = 0; i < (weather.length - 1); i++) { 
-    weatherList.push(weather[i] + ". ");
+    // weatherList.push(weather[i] + ". ");
     console.log(weatherList);
   } // formatted version of character list
-
-  for (i = (weather.length - 1); i < (weather.length); i++) {
-    finalWeather.push(", and the " + weather[i]);
-  }
-  
-  var art = [];
-  var artList = [];
-  var finalArt = [];
-  
-  if (cityoutput.indexOf("🚢") >= 0) { 
-     art.push("ship"); }
-  
-  if (cityoutput.indexOf("🎡") >= 0) { 
-      art.push("ferris wheel");
-  }
-  
   
   // log the forest trace and the cast of characters.
 $('div#trace').html(cityoutput);
@@ -303,7 +285,6 @@ $('div#trace').html(cityoutput);
   console.log(cityoutput);
   console.log(weather);
   console.log(weatherList);
-  console.log(finalWeather);
   
   
 // exposition
@@ -339,16 +320,16 @@ var placeDesc = [
   `${rm.generateSentences(20).join(" ")}`
 ];
   
-var artDesc = [
+/* var artDesc = [
   "A new exhibition had recently opened; a showcase of " + `${RiTa.randomWord('jj')} ` + "art, featuring " + `${RiTa.randomWord('jj')} ` + "paintings of a " + art[1] + ", and a " + art[0] + ". ",
   "The gallery's current exhibition had been open for some time, but remained well-attended; it was a showcase of " + `${RiTa.randomWord('jj')} ` + "art, featuring " + `${RiTa.randomWord('jj')} ` + "paintings of a " + art[1] + ", and a " + art[0] + ". "
-];
+]; */
 
 
 function exposition() {
   
   
- var exposition = "<p>It was a " + `${RiTa.randomWord('jj')} ` + dayNight[0] + " in the " + cityname + " City, which was  " + `${RiTa.randomWord('jj')} ` + " and also rather " + `${RiTa.randomWord('jj')}` + ". " + weatherList + ". The " + cityname + " City was " + `${RiTa.randomWord('jj')}` + ". " + placeDesc + "</p>";
+ var exposition = "<p>It was a " + `${RiTa.randomWord('jj')} ` + dayNight[0] + " in the " + cityname + " City, which was  " + `${RiTa.randomWord('jj')} ` + " and also rather " + `${RiTa.randomWord('jj')}` + ". " + weatherList + ".</p><p>The " + cityname + " City was " + `${RiTa.randomWord('jj')}` + ". " + placeDesc + "</p>";
  
  console.log(exposition);
 console.log(dayNight[0]);
@@ -427,6 +408,7 @@ var rollEnd = ending[Math.floor(Math.random()*ending.length)];
 // exposition
 title();
 rollTime();
+list();
 exposition();
   
 /* var i;

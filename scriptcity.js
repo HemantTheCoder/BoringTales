@@ -225,60 +225,60 @@ function title() {
   
   
   if (cityoutput.indexOf("☁️") >= 0) { 
-    weather.push("clouds");
+    weather.push("It was a cloudy day");
   }
   if(cityoutput.indexOf("🌧") >= 0) {
-    weather.push("rain");
+    weather.push("Rain fell over the city");
   }
   if (cityoutput.indexOf("⛈") >= 0) { 
-      weather.push("rainstorm");
+      weather.push("Rain fell over the city, and lightning flashed");
   }
   if (cityoutput.indexOf("🌩") >= 0) { 
-      weather.push("storm");
+      weather.push("Lightning flashed from clouds over the city");
   }
   if (cityoutput.indexOf("⚡️") >= 0) { 
-      weather.push("lightning storm");
+      weather.push("Lightning flashed over the city");
   }
   if (cityoutput.indexOf("🌪") >= 0) { 
-      weather.push("tornado");
+      weather.push("There was a tornado tearing through the city");
   }
   if (cityoutput.indexOf("💧") >= 0) { 
-      weather.push("rain");
+      weather.push("Rain fell heavily over the city");
   }
   if (cityoutput.indexOf("☄") >= 0) { 
-      weather.push("meteor shower");
+      weather.push("Meteors fell through the dark sky");
   }
   if (cityoutput.indexOf("🌞") >= 0) {
-    weather.push("sunny");
+    weather.push("It was a bright and sunny day");
   }
   if (cityoutput.indexOf("🌕") >= 0) {
-    weather.push("full moon");
+    weather.push("The moon was bright and full");
   }
   if (cityoutput.indexOf("🌖") >= 0) {
-    weather.push("waxing moon");
+    weather.push("The moon was almost full");
   }
   if (cityoutput.indexOf("🌗") >= 0) {
-    weather.push("half moon");
+    weather.push("The moon was a perfect semicircle");
   }
   if (cityoutput.indexOf("🌘") >= 0) {
-    weather.push("crescent moon");
+    weather.push("The moon was a slim crescent");
   }
   if (cityoutput.indexOf("🌑") >= 0) {
-    weather.push("new moon");
+    weather.push("The moon was dark and new");
   }
   if (cityoutput.indexOf("🌚") >= 0) {
-    weather.push("moon with a face");
+    weather.push("The moon smiled");
   }
   
                   
   
   var i;
   for (i = 0; i < (weather.length - 1); i++) { 
-    charList.push(" the " + weather[i]);
+    weatherList.push(" the " + weather[i]);
   } // formatted version of character list
 
   for (i = (weather.length - 1); i < (weather.length); i++) {
-    finalChar.push(", and the " + weather[i]);
+    finalWeather.push(", and the " + weather[i]);
   }
   
   var art = [];
@@ -298,8 +298,8 @@ $('div#trace').html(cityoutput);
 
   console.log(cityoutput);
   console.log(weather);
-  console.log(charList);
-  console.log(finalChar);
+  console.log(weatherList);
+  console.log(finalWeather);
   
   
 // exposition

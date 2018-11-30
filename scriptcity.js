@@ -10,7 +10,7 @@ var end = "<h2>THE END</h2>" + "<h3><a href='/gallery.html'>< prev </a>&nbsp;&nb
 var citytemplate = tracery.createGrammar(
    {
     "origin": ["#daysky1#<br/>#daysky2#<br/>#daysky2#<br/>#city#", "#nightsky1#<br/>#nightsky2#<br/>#nightsky2#<br/>#city#"],
-	"city": ["#building##building##building##building##building##building##building##building#"],
+	"city": ["#building##building##building##building##building##building##building##building##building#"],
 	"daysky1":[
 	"#suns#       ",
 	" #suns#      ",
@@ -435,17 +435,17 @@ function verbedAdverb() {
  return `${RiTa.conjugate(RiTa.randomWord('vb'), pastTense)} ` + `${RiTa.randomWord('rb')}`;
 }
   
-var ending = [
+/* var ending = [
       " 'I just like the colours,' " + " said, " + `${RiTa.randomWord('rb')}` + ". ",
       " 'I just thought it was nice,' " + " said, " + `${RiTa.randomWord('rb')}` + ". ",
       " 'Actually, I hate art,' " + " said, " + `${RiTa.randomWord('rb')}` + ". "
       ]; 
   
-var rollEnd = ending[Math.floor(Math.random()*ending.length)];
+var rollEnd = ending[Math.floor(Math.random()*ending.length)]; 
   
   function punchline() {
   $('div#output').append(rollEnd);
-  }
+  } */
   
 // WHAT GOES ON THE PAGE
   
@@ -462,8 +462,8 @@ for (i = 0; i < buildings.length-1; i++) {
   buildings.push(buildings.shift());  // moves first character to end of array so we can start over 
 }
   
-for (i = buildings.length - 1; i < buildings.length; i++) { 
-  /* charAction();
+/* for (i = buildings.length - 1; i < buildings.length; i++) { 
+  charAction();
   charDesc();
   charSpeech();
   console.log(dayNight);

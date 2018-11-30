@@ -269,12 +269,16 @@ function title() {
   if (cityoutput.indexOf("🌚") >= 0) {
     weather.push("The moon smiled");
   }
+  if (cityoutput.indexOf("⭐️" || "🌟") >= 0) {
+    weather.push("It was a starry night");
+  }
   
                   
   
   var i;
   for (i = 0; i < (weather.length - 1); i++) { 
-    weatherList.push(" the " + weather[i]);
+    weatherList.push(weather[i] + ". ");
+    console.log(weatherList);
   } // formatted version of character list
 
   for (i = (weather.length - 1); i < (weather.length); i++) {
@@ -344,7 +348,7 @@ var artDesc = [
 function exposition() {
   
   
- var exposition = "<p>It was a " + `${RiTa.randomWord('jj')} ` + dayNight[0] + " in the " + cityname + " City, which was  " + `${RiTa.randomWord('jj')} ` + " and also rather " + `${RiTa.randomWord('jj')}` + ". " + placeDesc + "</p>";
+ var exposition = "<p>It was a " + `${RiTa.randomWord('jj')} ` + dayNight[0] + " in the " + cityname + " City, which was  " + `${RiTa.randomWord('jj')} ` + " and also rather " + `${RiTa.randomWord('jj')}` + ". " + weatherList + ". The " + cityname + " City was " + `${RiTa.randomWord('jj')}` + ". " + placeDesc + "</p>";
  
  console.log(exposition);
 console.log(dayNight[0]);
@@ -354,7 +358,7 @@ console.log(dayNight[0]);
   
 // function to describe a character.
   
-function charDesc() {
+/* function charDesc() {
   var currentChar = characters[0];
   
   var description = "The " + currentChar + " was a " + `${RiTa.randomWord('jj')} ` + currentChar + ", " + `${RiTa.randomWord('jj')}` + ", " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.randomWord('jj')}` + ". The " + currentChar + " enjoyed " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ", but hated " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ". At this particular moment, " + " felt " + `${RiTa.randomWord('jj')}` + ", with shades of " + `${RiTa.randomWord('jj')}` + ". ";
@@ -362,14 +366,14 @@ function charDesc() {
  console.log(description);
   
  $('div#output').append(description); 
-}
+} */
   
 function verbedAdverb() {
  return `${RiTa.conjugate(RiTa.randomWord('vb'), pastTense)} ` + `${RiTa.randomWord('rb')}`;
 }
   
   
-function charActionFirst() {
+/* function charActionFirst() {
   var prevChar = characters[characters.length - 1];
   var currentChar = characters[0];
   var nextChar = characters[1];
@@ -387,7 +391,7 @@ function charAction() {
   
   console.log(action);
   $('div#output').append(action);
-}
+} 
   
 function charSpeech() {
   var prevChar = characters[characters.length - 1];
@@ -404,7 +408,7 @@ var speech = " approached the " + prevChar + ", " + verbedAdverb() + ", and said
   
   console.log(speech);
   $('div#output').append(speech);
-}
+} */
   
 var ending = [
       " 'I just like the colours,' " + " said, " + `${RiTa.randomWord('rb')}` + ". ",
@@ -425,28 +429,28 @@ title();
 rollTime();
 exposition();
   
-var i;
+/* var i;
 for (i = 0; i < 1; i++) {
- charDesc();
+ /* charDesc();
  charActionFirst();
- characters.push(characters.shift());  // moves first character to end of array so we can start over
+ characters.push(characters.shift());  // moves first character to end of array so we can start over 
 }
 
-  for (i = 0; i < characters.length-1; i++) { 
+  /* for (i = 0; i < characters.length-1; i++) { 
   charAction();
   charDesc();
   charSpeech();
-  characters.push(characters.shift());  // moves first character to end of array so we can start over
+  characters.push(characters.shift());  // moves first character to end of array so we can start over 
 }
   
 for (i = characters.length - 1; i < characters.length; i++) { 
-  charAction();
+  /* charAction();
   charDesc();
   charSpeech();
   console.log(dayNight);
   punchline();
-  characters.push(characters.shift());  
-}
+  characters.push(characters.shift()); 
+} */
 
   fin();
   

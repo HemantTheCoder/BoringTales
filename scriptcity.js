@@ -287,6 +287,89 @@ $('div#trace').html(cityoutput);
   console.log(weatherList);
   
   
+  
+// buildings
+
+var weather = [];
+  var weatherList = [];
+  
+  if (cityoutput.indexOf("🏠") >= 0) { 
+    weather.push("house");
+  }
+  if(cityoutput.indexOf("🏡") >= 0) {
+    weather.push("house with a garden");
+  }
+  if (cityoutput.indexOf("🏚") >= 0) { 
+      weather.push("tumbledown house");
+  }
+  if (cityoutput.indexOf("🏢") >= 0) { 
+      weather.push("office building");
+  }
+  if (cityoutput.indexOf("🏬") >= 0) { 
+      weather.push("department store");
+  }
+  if (cityoutput.indexOf("🏣") >= 0) { 
+      weather.push("post office");
+  }
+  if (cityoutput.indexOf("🏤") >= 0) { 
+      weather.push("Rain fell heavily over the city");
+  }
+  if (cityoutput.indexOf("🏥") >= 0) { 
+      weather.push("Meteors fell through the dark sky");
+  }
+  if (cityoutput.indexOf("🏦") >= 0) {
+    weather.push("It was a bright and sunny day");
+  }
+  if (cityoutput.indexOf("🏨") >= 0) {
+    weather.push("The moon was bright and full");
+  }
+  if (cityoutput.indexOf("🏪") >= 0) {
+    weather.push("The moon was almost full");
+  }
+  if (cityoutput.indexOf("🏫") >= 0) {
+    weather.push("The moon was a perfect semicircle");
+  }
+  if (cityoutput.indexOf("🏩") >= 0) {
+    weather.push("The moon was a slim crescent");
+  }
+  if (cityoutput.indexOf("💒") >= 0) {
+    weather.push("The moon was dark and new");
+  }
+  if (cityoutput.indexOf("🏛") >= 0) {
+    weather.push("The moon smiled");
+  }
+  if (cityoutput.indexOf("⛪️") >= 0) {
+    weather.push("It was a starry night");
+  }  
+  if (cityoutput.indexOf("🕌") >= 0) {
+    weather.push("The moon smiled");
+  }
+  if (cityoutput.indexOf("🎪") >= 0) {
+    weather.push("It was a starry night");
+  }  
+  if (cityoutput.indexOf("🕍") >= 0) {
+    weather.push("The moon smiled");
+  }
+  
+function buildingslist() {
+  buildingsList = buildings.join(". ");
+}
+  
+  
+  var i;
+  for (i = 0; i < (weather.length - 1); i++) { 
+    // weatherList.push(weather[i] + ". ");
+    console.log(weatherList);
+  } // formatted version of character list
+  
+  // log the forest trace and the cast of characters.
+$('div#trace').html(cityoutput);
+
+  console.log(cityoutput);
+  console.log(weather);
+  console.log(weatherList);
+  
+  
 // exposition
 var pastTense = {tense: RiTa.PAST_TENSE}; //arg for RiTa
   

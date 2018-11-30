@@ -290,71 +290,76 @@ $('div#trace').html(cityoutput);
   
 // buildings
 
-var weather = [];
-  var weatherList = [];
+var buildings = [];
+var buildingsList = [];
+var finalBuilding = [];
   
   if (cityoutput.indexOf("🏠") >= 0) { 
-    weather.push("house");
+    buildings.push("house");
   }
   if(cityoutput.indexOf("🏡") >= 0) {
-    weather.push("house with a garden");
+    buildings.push("house with a garden");
   }
   if (cityoutput.indexOf("🏚") >= 0) { 
-      weather.push("tumbledown house");
+      buildings.push("tumbledown house");
   }
   if (cityoutput.indexOf("🏢") >= 0) { 
-      weather.push("office building");
+      buildings.push("office building");
   }
   if (cityoutput.indexOf("🏬") >= 0) { 
-      weather.push("department store");
+      buildings.push("department store");
   }
   if (cityoutput.indexOf("🏣") >= 0) { 
-      weather.push("post office");
+      buildings.push("Japanese post office");
   }
   if (cityoutput.indexOf("🏤") >= 0) { 
-      weather.push("Rain fell heavily over the city");
+      buildings.push("European post office");
   }
   if (cityoutput.indexOf("🏥") >= 0) { 
-      weather.push("Meteors fell through the dark sky");
+      buildings.push("hospital");
   }
   if (cityoutput.indexOf("🏦") >= 0) {
-    weather.push("It was a bright and sunny day");
+    buildings.push("bank");
   }
   if (cityoutput.indexOf("🏨") >= 0) {
-    weather.push("The moon was bright and full");
+    buildings.push("hotel");
   }
   if (cityoutput.indexOf("🏪") >= 0) {
-    weather.push("The moon was almost full");
+    buildings.push("convenience store");
   }
   if (cityoutput.indexOf("🏫") >= 0) {
-    weather.push("The moon was a perfect semicircle");
+    buildings.push("school");
   }
   if (cityoutput.indexOf("🏩") >= 0) {
-    weather.push("The moon was a slim crescent");
+    buildings.push("love hotel");
   }
   if (cityoutput.indexOf("💒") >= 0) {
-    weather.push("The moon was dark and new");
+    buildings.push("church");
   }
   if (cityoutput.indexOf("🏛") >= 0) {
-    weather.push("The moon smiled");
+    buildings.push("ancient building");
   }
   if (cityoutput.indexOf("⛪️") >= 0) {
-    weather.push("It was a starry night");
+    buildings.push("temple");
   }  
   if (cityoutput.indexOf("🕌") >= 0) {
-    weather.push("The moon smiled");
+    buildings.push("mosque");
   }
   if (cityoutput.indexOf("🎪") >= 0) {
-    weather.push("It was a starry night");
+    buildings.push("fairground");
   }  
   if (cityoutput.indexOf("🕍") >= 0) {
-    weather.push("The moon smiled");
+    buildings.push("castle");
   }
   
-function buildingslist() {
-  buildingsList = buildings.join(". ");
-}
-  
+var i;
+  for (i = 0; i < (buildings.length - 1); i++) { 
+    buildingsList.push(" a " + buildings[i]);
+  } // formatted version of character list
+
+  for (i = (buildings.length - 1); i < (buildings.length); i++) {
+    finalBuilding.push(", and a " + buildings[i]);
+  }
   
   var i;
   for (i = 0; i < (weather.length - 1); i++) { 
@@ -422,40 +427,20 @@ console.log(dayNight[0]);
   
 // function to describe a character.
   
-/* function charDesc() {
-  var currentChar = characters[0];
+function buildingsDesc() {
+  var currentBuilding = buildings[0];
   
-  var description = "The " + currentChar + " was a " + `${RiTa.randomWord('jj')} ` + currentChar + ", " + `${RiTa.randomWord('jj')}` + ", " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.randomWord('jj')}` + ". The " + currentChar + " enjoyed " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ", but hated " + `${RiTa.pluralize(RiTa.randomWord('nn'))}` + ". At this particular moment, " + " felt " + `${RiTa.randomWord('jj')}` + ", with shades of " + `${RiTa.randomWord('jj')}` + ". ";
+  var description = "" + "The " + currentBuilding + " was a " + `${RiTa.randomWord('jj')} ` + currentBuilding + ", " + `${RiTa.randomWord('jj')}` + ", " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.randomWord('jj')}` + ". ";
   
  console.log(description);
   
  $('div#output').append(description); 
-} */
+}
   
 function verbedAdverb() {
  return `${RiTa.conjugate(RiTa.randomWord('vb'), pastTense)} ` + `${RiTa.randomWord('rb')}`;
 }
-  
-  
-/* function charActionFirst() {
-  var prevChar = characters[characters.length - 1];
-  var currentChar = characters[0];
-  var nextChar = characters[1];
-  
-  var action = "The " + currentChar + " " + verbedAdverb() + ", " + verbedAdverb() + ", then " + verbedAdverb() + ". " + " was " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.conjugate(RiTa.randomWord('vb'), pastTense)} ` + "the " + `${RiTa.randomWord('nn')}` + ". "; 
-  
-  console.log(action);
-  $('div#output').append(action);
-}
-  
-function charAction() {
-  var currentChar = characters[0];
-  
-  var action = "Nearby, the " + currentChar + " " + verbedAdverb() + ", " + verbedAdverb() + ", then " + verbedAdverb() + ". " + " was " + `${RiTa.randomWord('jj')}` + ", and " + `${RiTa.conjugate(RiTa.randomWord('vb'), pastTense)} ` + "the " + `${RiTa.randomWord('nn')}` + ". "; 
-  
-  console.log(action);
-  $('div#output').append(action);
-} 
+ /* 
   
 function charSpeech() {
   var prevChar = characters[characters.length - 1];

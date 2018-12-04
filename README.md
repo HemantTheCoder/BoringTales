@@ -22,3 +22,26 @@ The basic structure:
 * Fin. 
 
 I make some apologies for the extremely poor quality of my code, but not too many. Learning!
+
+
+-----------------------
+
+
+## Markov source texts
+
+All texts are sourced from Project Gutenberg.
+
+### Chapter 1
+
+* [J. M. Barrie: Peter Pan](http://www.gutenberg.org/ebooks/16).
+* [Kenneth Grahame: The Wind In The Willows](http://www.gutenberg.org/ebooks/289).
+
+
+### Chapter 2
+
+* [Walter Crane: Ideals In Art: Papers Theoretical, Practical, Critical](http://www.gutenberg.org/ebooks/57852).
+
+### Chapter 3
+
+* []()
+ 

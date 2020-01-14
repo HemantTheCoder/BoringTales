@@ -1,4 +1,6 @@
 # BoringTales
+LIVE APP ON :- https://ludicrous-launch.glitch.me
+
 This is really an attempt to teach myself:
 
 a bit more Javascript than the pitiful amount I already know
